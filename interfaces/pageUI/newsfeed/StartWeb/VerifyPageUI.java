@@ -1,4 +1,4 @@
-package pageUI.newsfeed;
+package pageUI.newsfeed.StartWeb;
 
 public class VerifyPageUI {
     public static final String titlePage = "//h3[@class ='text-center']";

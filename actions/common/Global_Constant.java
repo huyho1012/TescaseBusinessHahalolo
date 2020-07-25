@@ -5,7 +5,8 @@ public class Global_Constant {
     public static final String URL_NEWS_FEED_LOGIN = "https://test-newsfeed.hahalolo.com/auth/signin";
     public static final String URL_BUSINESS_LOGIN = "";
     // Constant
-    public static final long TIME_OUT = 30;
+    public static final long LONG_TIME_OUT = 30;
+    public static final long LESS_TIME_OUT = 5;
     public static final String HTML_CODE = "<p> Hello word </p>";
     public static final String SCRIPT_CODE = "<script>destroyWebsite();</script>";
     // Đường dẫn thư mục

@@ -2,7 +2,7 @@ package PageObject.newsfeed;
 
 import common.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.LoginPageUI;
+import pageUI.newsfeed.StartWeb.LoginPageUI;
 
 public class LoginPageObject extends AbstractPage {
     WebDriver driver;

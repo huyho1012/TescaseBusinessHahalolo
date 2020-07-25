@@ -2,7 +2,7 @@ package PageObject.newsfeed;
 
 import common.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.VerifyPageUI;
+import pageUI.newsfeed.StartWeb.VerifyPageUI;
 
 public class VerifyPageObject extends AbstractPage {
     WebDriver driver;

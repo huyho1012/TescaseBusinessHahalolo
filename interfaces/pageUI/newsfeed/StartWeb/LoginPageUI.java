@@ -1,4 +1,4 @@
-package pageUI.newsfeed;
+package pageUI.newsfeed.StartWeb;
 
 public class LoginPageUI {
 

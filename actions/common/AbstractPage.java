@@ -7,8 +7,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageUI.newsfeed.PostFunctionUI;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -24,7 +26,7 @@ public abstract class AbstractPage {
 
     // Timeout
     public void setImplicitWait(WebDriver driver){
-        driver.manage().timeouts().implicitlyWait(Global_Constant.TIME_OUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Global_Constant.LONG_TIME_OUT, TimeUnit.SECONDS);
     }
     public void setTimeDelay(long time){
         try {
@@ -33,7 +35,6 @@ public abstract class AbstractPage {
             e.printStackTrace();
         }
     }
-
     // WebBrowser
     public void openURL(WebDriver driver,String urlPage){
         driver.get(urlPage);
@@ -58,7 +59,7 @@ public abstract class AbstractPage {
     }
     // Alert
     public void waitPresenceAlert(WebDriver driver){
-        explicitWait = new WebDriverWait(driver,Global_Constant.TIME_OUT);
+        explicitWait = new WebDriverWait(driver,Global_Constant.LONG_TIME_OUT);
         explicitWait.until(ExpectedConditions.alertIsPresent());
     }
     public void acceptAlert(WebDriver driver){
@@ -155,7 +156,7 @@ public abstract class AbstractPage {
     public void selectItemInCustomDropdown(WebDriver driver, String dropdownMenu, String dropdownItem, String expectedItem){
         clickToElement(driver,dropdownMenu);
         setTimeDelay(1);
-        explicitWait = new WebDriverWait(driver,Global_Constant.TIME_OUT);
+        explicitWait = new WebDriverWait(driver,Global_Constant.LONG_TIME_OUT);
         explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byXpath(dropdownItem)));
         elements = findElements(driver,dropdownItem);
         for(WebElement item: elements){
@@ -191,7 +192,6 @@ public abstract class AbstractPage {
     public boolean checkIsSelectedElement(WebDriver driver, String locator){
         return findElement(driver,locator).isSelected();
     }
-
     // Action
     public void doubleClickToElement(WebDriver driver, String locator){
         action = new Actions(driver);
@@ -213,28 +213,117 @@ public abstract class AbstractPage {
         action = new Actions(driver);
         action.sendKeys(element,key).perform();
     }
-
-    // Webdriver wait
-    public void waitElementToClickAble(WebDriver driver, String locator){
-        explicitWait = new WebDriverWait(driver, Global_Constant.TIME_OUT);
-        explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(locator)));
+    // Upload
+    public void uploadOneFileBySendKey(WebDriver driver, String locator, String fileName){
+        waitElementToVisible(driver,locator);
+        sendKeyToElement(driver,locator,fileName);
     }
-    public void waitElementToVisible(WebDriver driver, String locator){
-        explicitWait = new WebDriverWait(driver, Global_Constant.TIME_OUT);
-        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(locator)));
-    }
-    public void waitElementToInvisible(WebDriver driver, String locator){
-        explicitWait = new WebDriverWait(driver, Global_Constant.TIME_OUT);
-        explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(locator)));
-    }
-
-    public void uploadMultipleBySendKey(WebDriver driver, String... fileNames){
+    public void uploadMultipleFileBySendKey(WebDriver driver,String locator, String... fileNames){
         String fullFileName = "";
         for(String file : fileNames){
             fullFileName = fullFileName + Global_Constant.UPLOAD_FOLDER+ file+ "\n";
         }
         fullFileName = fullFileName.trim();
-        sendKeyToElement(driver, PostFunctionUI.UPLOAD_BUTTON_FLIED_INPUT,fullFileName);
+        waitElementToVisible(driver,locator);
+        sendKeyToElement(driver,locator,fullFileName);
     }
+    public void uploadFileByRobot(WebDriver driver, String... fileNames){
+        String fullFileName = "";
+        for(String file : fileNames){
+            fullFileName = fullFileName + Global_Constant.UPLOAD_FOLDER+ file+ "\n";
+        }
+        fullFileName = fullFileName.trim();
+        StringSelection select = new StringSelection(fullFileName);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select,null);
+        try {
+            Robot robot = new Robot();
+            setTimeDelay(1);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
 
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_V);
+            setTimeDelay(1);
+
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void uploadMultipleFileByAutoIT(WebDriver driver, String... fileNames){
+        String fullFileName = "";
+        for(String file : fileNames){
+            fullFileName = fullFileName + "\"" +Global_Constant.UPLOAD_FOLDER + file + "\"" +" ";
+        }
+        fullFileName = fullFileName.trim();
+        if (driver.toString().contains("firefox")){
+            try {
+                Runtime.getRuntime().exec(new String[] {Global_Constant.uploadMultipleByFirefoxAuto, fullFileName});
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (driver.toString().contains("chrome")){
+            try {
+                Runtime.getRuntime().exec(new String[] {Global_Constant.uploadMultipleByChromeAuto, fullFileName});
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    // Javascript Executor
+    public void sendKeyToElementByJS(WebDriver driver,String locator, String valueName){
+        jsExecutor =(JavascriptExecutor) driver;
+        element = findElement(driver,locator);
+        jsExecutor.executeScript("arguments[0].setAttribute('value', '" + valueName +"')", element);
+    }
+    public void scrollToElement(WebDriver driver , String locator, String valueName){
+        jsExecutor = (JavascriptExecutor) driver;
+        element = findElement(driver,locator);
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+    public void clickToElementByJS(WebDriver driver, String locator){
+        jsExecutor = (JavascriptExecutor) driver;
+        element = findElement(driver,locator);
+        jsExecutor.executeScript("arguments[0].click();",element);
+    }
+    public void highlightElementByJS(WebDriver driver, String locator){
+        jsExecutor = (JavascriptExecutor) driver;
+        element = findElement(driver,locator);
+        String originalStyle = element.getAttribute("style");
+        jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", "border: 5px solid red; border-style: dashed;");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", originalStyle);
+    }
+    public void removeAttributeByJS(WebDriver driver, String locator,String attributeName){
+        jsExecutor = (JavascriptExecutor) driver;
+        element = findElement(driver,locator);
+        jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeName + "');", element);
+    }
+    public boolean verifyTextInInnerText(String textExpected) {
+        String textActual = (String) jsExecutor.executeScript("return document.documentElement.innerText.match('" + textExpected + "')[0]");
+        return textActual.equals(textExpected);
+    }
+    // Driver wait
+    public void waitElementToClickAble(WebDriver driver, String locator){
+        explicitWait = new WebDriverWait(driver, Global_Constant.LONG_TIME_OUT);
+        explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(locator)));
+    }
+    public void waitElementToVisible(WebDriver driver, String locator){
+        explicitWait = new WebDriverWait(driver, Global_Constant.LONG_TIME_OUT);
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(locator)));
+    }
+    public void waitElementToInvisible(WebDriver driver, String locator){
+        explicitWait = new WebDriverWait(driver, Global_Constant.LONG_TIME_OUT);
+        explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(locator)));
+    }
+    public void waitElementToPresence(WebDriver driver, String locator){
+        explicitWait = new WebDriverWait(driver, Global_Constant.LONG_TIME_OUT);
+        explicitWait.until(ExpectedConditions.presenceOfElementLocated(byXpath(locator)));
+    }
 }
