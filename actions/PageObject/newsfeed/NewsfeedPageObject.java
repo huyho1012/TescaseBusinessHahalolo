@@ -11,7 +11,7 @@ public class NewsfeedPageObject extends AbstractPage {
     }
 
     public void clickCreateNormalPost() {
-        waitForElementClickable(driver, NewsfeedPageIU.NORMAL_POST_FUNCTION);
+        waitElementToClickAble(driver, NewsfeedPageIU.NORMAL_POST_FUNCTION);
         clickToElement(driver,NewsfeedPageIU.NORMAL_POST_FUNCTION);
     }
 }

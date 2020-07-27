@@ -1,8 +1,11 @@
 package common;
 
+import org.openqa.selenium.WebDriver;
+
 import java.util.Random;
 public class AbstractTest {
-    public String randomPassword(int chars) {
+    private WebDriver driver;
+    protected String randomPassword(int chars) {
         String text = null;
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+ "0123456789"+ "abcdefghijklmnopqrstuvxyz";
         StringBuilder bd = new StringBuilder(chars);
@@ -12,7 +15,7 @@ public class AbstractTest {
         }
         return text;
     }
-    public int randomEmail(){
+    protected int randomEmail(){
         Random rd = new Random();
         return rd.nextInt(1000);
     }

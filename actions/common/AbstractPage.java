@@ -25,6 +25,9 @@ public abstract class AbstractPage {
     private JavascriptExecutor jsExecutor;
 
     // Timeout
+    public void waitForPageLoading(WebDriver driver){
+        driver.manage().timeouts().pageLoadTimeout(Global_Constant.LONG_TIME_OUT,TimeUnit.SECONDS);
+    }
     public void setImplicitWait(WebDriver driver){
         driver.manage().timeouts().implicitlyWait(Global_Constant.LONG_TIME_OUT, TimeUnit.SECONDS);
     }
@@ -325,5 +328,18 @@ public abstract class AbstractPage {
     public void waitElementToPresence(WebDriver driver, String locator){
         explicitWait = new WebDriverWait(driver, Global_Constant.LONG_TIME_OUT);
         explicitWait.until(ExpectedConditions.presenceOfElementLocated(byXpath(locator)));
+    }
+
+    // Dynamic Locator
+    public String castToObject(String locator, String... values){
+        return  String.format(locator, values);
+    }
+    public void waitElementToClickAble(WebDriver driver, String locator, String... values){
+        explicitWait = new WebDriverWait(driver, Global_Constant.LONG_TIME_OUT);
+        explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(castToObject(locator,values))));
+    }
+    public void clickToElement(WebDriver driver, String locator, String...values) {
+        element = findElement(driver, castToObject(locator, values));
+        element.click();
     }
 }

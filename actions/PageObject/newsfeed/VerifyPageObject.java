@@ -12,7 +12,7 @@ public class VerifyPageObject extends AbstractPage {
 
     public Boolean checkEmailDisplayOnRegisterPage(String email) {
         waitElementToVisible(driver, VerifyPageUI.contentVerify);
-        if(getTextElement(driver,VerifyPageUI.contentVerify).contains(email)){
+        if(getTextOfElement(driver,VerifyPageUI.contentVerify).contains(email)){
             return true;
         }
         else return false;
@@ -20,14 +20,14 @@ public class VerifyPageObject extends AbstractPage {
 
     public Boolean checkTitlePageVerifyEmail() {
         waitElementToVisible(driver, VerifyPageUI.titlePage);
-        if(getTextElement(driver,VerifyPageUI.titlePage).contains("Xác minh tài khoản bằng email")){
+        if(getTextOfElement(driver,VerifyPageUI.titlePage).contains("Xác minh tài khoản bằng email")){
             return true;
         }
         else return false;
     }
     public Boolean checkPhoneDisplayOnRegisterPage(String phoneNumber) {
         waitElementToVisible(driver, VerifyPageUI.contentVerify);
-        if(getTextElement(driver,VerifyPageUI.contentVerify).contains(phoneNumber)){
+        if(getTextOfElement(driver,VerifyPageUI.contentVerify).contains(phoneNumber)){
             return true;
         }
         else return false;
@@ -35,7 +35,7 @@ public class VerifyPageObject extends AbstractPage {
 
     public Boolean checkTitlePageVerifyPhone() {
         waitElementToVisible(driver, VerifyPageUI.titlePage);
-        if(getTextElement(driver,VerifyPageUI.titlePage).contains("Xác minh tài khoản bằng điện thoại")){
+        if(getTextOfElement(driver,VerifyPageUI.titlePage).contains("Xác minh tài khoản bằng điện thoại")){
             return true;
         }
         else return false;
@@ -54,6 +54,6 @@ public class VerifyPageObject extends AbstractPage {
 
     public String getVerifyCode() {
         waitElementToVisible(driver,VerifyPageUI.VERIFY_MESSAGE_CODE);
-        return getTextElement(driver,VerifyPageUI.VERIFY_MESSAGE_CODE);
+        return getTextOfElement(driver,VerifyPageUI.VERIFY_MESSAGE_CODE);
     }
 }

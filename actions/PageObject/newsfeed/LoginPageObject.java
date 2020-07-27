@@ -1,10 +1,11 @@
 package PageObject.newsfeed;
 
-import common.AbstractPage;
+import PageObject.newsfeed.Common.AbstractMenuPage;
+import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
 import org.openqa.selenium.WebDriver;
 import pageUI.newsfeed.StartWeb.LoginPageUI;
 
-public class LoginPageObject extends AbstractPage {
+public class LoginPageObject extends AbstractMenuPage {
     WebDriver driver;
     public LoginPageObject(WebDriver webDriver){
         driver = webDriver;
@@ -18,17 +19,18 @@ public class LoginPageObject extends AbstractPage {
         sendKeyToElement(driver,LoginPageUI.PASSWORD_LOGIN_TEXT_BOX,passWord);
     }
 
-    public void clickToLoginButton() {
+    public NewsfeedTabPageObject clickToLoginButton() {
         waitElementToClickAble(driver,LoginPageUI.LOGIN_BUTTON);
         clickToElement(driver,LoginPageUI.LOGIN_BUTTON);
+        return new NewsfeedTabPageObject(driver);
     }
     public String getValidationErrorMessageOnUsernameLogin(){
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_USERNAME);
-        return getTextElement(driver, LoginPageUI.VALIDATE_ERROR_MESSAGE_USERNAME);
+        return getTextOfElement(driver, LoginPageUI.VALIDATE_ERROR_MESSAGE_USERNAME);
     }
     public String getValidationErrorMessageOnPasswordLogin(){
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_PASSWORD);
-        return getTextElement(driver, LoginPageUI.VALIDATE_ERROR_MESSAGE_PASSWORD);
+        return getTextOfElement(driver, LoginPageUI.VALIDATE_ERROR_MESSAGE_PASSWORD);
     }
 
     public void inputDataOnFirstNameSignUp(String firstName) {
@@ -62,39 +64,39 @@ public class LoginPageObject extends AbstractPage {
 
     public String getValidateFirstNameSignUp() {
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_FIRST_NAME);
-        return getTextElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_FIRST_NAME);
+        return getTextOfElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_FIRST_NAME);
     }
     public void checkLanguageButton(){
         waitElementToVisible(driver, LoginPageUI.VIETNAMESE_BUTTON);
-        if(!isControlDisplay(driver, LoginPageUI.VIETNAMESE_BUTTON)){
+        if(!checkIsDisplayedElement(driver, LoginPageUI.VIETNAMESE_BUTTON)){
             clickToElement(driver,LoginPageUI.VIETNAMESE_BUTTON);
         }
     }
 
     public String getValidateLastNameSignUp() {
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_LAST_NAME);
-        return getTextElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_LAST_NAME);
+        return getTextOfElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_LAST_NAME);
     }
 
     public boolean changePhoneCode(String phoneCode) {
         waitElementToClickAble(driver,LoginPageUI.PHONE_CODE_AREA);
-        if(isControlDisplay(driver,LoginPageUI.PHONE_CODE_AREA)){
-            selectItemOnCustomDropdown(driver,LoginPageUI.PHONE_CODE_AREA,"//span[@class ='phone-code']",phoneCode);
+        if(checkIsDisplayedElement(driver,LoginPageUI.PHONE_CODE_AREA)){
+            selectItemInCustomDropdown(driver,LoginPageUI.PHONE_CODE_AREA,"//span[@class ='phone-code']",phoneCode);
             return true;
         }return false;
     }
 
     public String getValidatePhoneEmailSignUp() {
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_PHONE_EMAIL);
-        return getTextElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_PHONE_EMAIL);
+        return getTextOfElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_PHONE_EMAIL);
     }
 
     public String getValidatePasswordSignUp() {
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_PASS_WORD);
-        return getTextElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_PASS_WORD);
+        return getTextOfElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_PASS_WORD);
     }
     public String getValidateConfirmPassSignUp() {
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_CONFIRM_PASS);
-        return getTextElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_CONFIRM_PASS);
+        return getTextOfElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_CONFIRM_PASS);
     }
 }

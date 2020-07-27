@@ -25,7 +25,7 @@ public class TestcaseOfPost {
         driver = new ChromeDriver();
         driver.get(Global_Constant.URL_NEWS_FEED_LOGIN);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Global_Constant.TIME_OUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Global_Constant.LONG_TIME_OUT, TimeUnit.SECONDS);
         loginPage = new LoginPageObject(driver);
         loginPage.enterUsernameToLogin("balo_04@mailinator.com");
         loginPage.enterPasswordToLogin("123456");
@@ -38,7 +38,7 @@ public class TestcaseOfPost {
         postPage = new PostPageObject(driver);
         postPage.enterPostContent("Huy đẹp trai");
     postPage.uploadImageOnNormalPost(driver,file1,file2);
-       postPage.uploadMultipleBySendKey(driver,file1,file2);
+       postPage.uploadMultipleFileByAutoIT(driver,file1,file2);
         postPage.clickButtonSharePost();
     }
 

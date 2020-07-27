@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="commons-codec-1.13">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/commons-codec-1.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/commons-compress-1.18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/commons-io-2.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/commons-lang3-3.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/gson-2.8.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/httpclient5-5.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/httpcore5-5.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/jarchivelib-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/jsoup-1.13.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/webdrivermanager-4.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

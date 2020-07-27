@@ -1,4 +1,4 @@
-package pageUI.newsfeed.common;
+package pageUI.newsfeed.Common;
 
 public class sidebarLeftUI {
 

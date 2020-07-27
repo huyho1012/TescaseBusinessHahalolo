@@ -1,6 +1,8 @@
 package common;
 
 public class Global_Constant {
+    public static String USER_NAME = "balo_04@mailinator.com";
+    public static String PASSWORD = "123456";
     // URL các project Hahalolo
     public static final String URL_NEWS_FEED_LOGIN = "https://test-newsfeed.hahalolo.com/auth/signin";
     public static final String URL_BUSINESS_LOGIN = "";

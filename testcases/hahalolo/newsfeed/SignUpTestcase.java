@@ -22,7 +22,7 @@ public class SignUpTestcase extends AbstractTest {
         driver = new ChromeDriver();
         driver.get(Global_Constant.URL_NEWS_FEED_LOGIN);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Global_Constant.TIME_OUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Global_Constant.LONG_TIME_OUT, TimeUnit.SECONDS);
         loginPage = new LoginPageObject(driver);
     }
     @BeforeMethod
