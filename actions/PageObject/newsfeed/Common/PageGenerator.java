@@ -2,7 +2,7 @@ package PageObject.newsfeed.Common;
 
 import PageObject.business.Business.BusinessDashboardPageObject;
 import PageObject.newsfeed.AccountSetting.GeneralAccountPageObject;
-import PageObject.newsfeed.LoginPageObject;
+import PageObject.newsfeed.StartingProject.LoginPageObject;
 import PageObject.newsfeed.PageFeed.*;
 import PageObject.newsfeed.PersonalWall.Handnote.TourHandnotePageObject;
 import org.openqa.selenium.WebDriver;

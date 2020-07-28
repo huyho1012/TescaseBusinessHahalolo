@@ -3,8 +3,8 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/TescaseBusinessHahalolo/testcases/hahalolo/newsfeed/LoginTestcase.java">
         <classes>
-            <class name="hahalolo.newsfeed.LoginTestcase"></class>
-            <class name="hahalolo.newsfeed.SignUpTestcase"></class>
+            <class name="hahalolo.newsfeed.StartIngApp.LoginTestcase"></class>
+            <class name="hahalolo.newsfeed.StartIngApp.SignUpTestcase"></class>
         </classes>
     </test>
 </suite>

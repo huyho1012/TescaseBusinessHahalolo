@@ -1,6 +1,6 @@
 package PageObject.newsfeed;
 
-import common.AbstractPage;
+import common.Function.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import pageUI.newsfeed.NewsfeedPageIU;
 

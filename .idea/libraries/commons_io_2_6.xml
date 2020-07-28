@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="commons-io-2.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/commons-lang3-3.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/gson-2.8.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/httpclient5-5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/httpcore5-5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/jarchivelib-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/jsoup-1.13.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/slf4j-api-1.7.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/WebDriverManager/webdrivermanager-4.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

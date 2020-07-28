@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="D:/TescaseBusinessHahalolo/testcases/hahalolo/newsfeed/TestCaseNewsfeedPage.java">
-        <parameter name="browser" value="chrome"></parameter>
+<suite name="All Test Suite" paralle  ="false">
+    <listeners>
+        <listener class-name="common.LogAndReport.MethodListener"></listener>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="common.LogAndReport.ExtentReportListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+<!--    <test name="Test with chrome">-->
+<!--        <parameter name="browser" value="chrome"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="hahalolo.newsfeed.TestCaseNewsfeedPage"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Test with firefox">
+        <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="hahalolo.newsfeed.TestCaseNewsfeedPage"></class>
+            <class name="hahalolo.newsfeed.CheckRedirectCorrectLink"></class>
         </classes>
-    </test></suite>
+    </test>
+</suite>

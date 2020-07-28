@@ -13,14 +13,11 @@ public class HeaderPageUI {
     public static final String SETTING_FUNCTION = "//i[@class = 'ic ic-caret-down primary']";
 
     public static final String CURRENCY_SETTING_HEADER = "//div[@class = 'topnav-item setcurrency']";
-
     public static final String WALLET_FUNCTION = "//i[@class = 'ic ic-wallet-primary']";
     public static final String CART_FUNCTION = "//i[@class = 'ic ic-cart-primary']";
 
-    public static final String HELPER_FUNCTION_ABOUT = "//i[@class = 'ic ic-question-circle-primary']/parent::span/following-sibling::div/a[text() = 'Giới thiệu']";
-    public static final String HELPER_FUNCTION_TERMS = "//i[@class = 'ic ic-question-circle-primary']/parent::span/following-sibling::div/a[text() = 'Điều khoản']";
-    public static final String HELPER_FUNCTION_HELPER_CENTER = "//i[@class = 'ic ic-question-circle-primary']/parent::span/following-sibling::div/a[text() = 'Trung tâm hỗ trợ']";
-
     public static final String SETTING_ITEM_FUNCTION = "//i[@class = 'ic ic-caret-down primary']/parent::span/following-sibling::div//i[@class ='ic %s']";
     public static final String NEWS_FEED_MENU = "//nav[@id = 'menu-primary']//a[contains(text(),'%s')]";
+    public static final String HELPER_ITEM_FUNCTION = "//i[@class = 'ic ic-question-circle-primary']/parent::span/following-sibling::div/a[text() = '%s']";
+
 }
