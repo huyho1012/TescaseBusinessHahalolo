@@ -26,5 +26,6 @@
     <orderEntry type="library" name="commons-collections-3.2.1" level="project" />
     <orderEntry type="library" name="commons-codec-1.11" level="project" />
     <orderEntry type="library" name="selenium-server-standalone-3.141.59 (1)" level="project" />
+    <orderEntry type="library" name="jakarta.activation-1.2.1" level="project" />
   </component>
 </module>

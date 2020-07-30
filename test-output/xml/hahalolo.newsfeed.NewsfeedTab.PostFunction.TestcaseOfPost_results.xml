@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test with firefox"
-           tests="1"
+           tests="2"
            failures="1"
            errors="0"
            skipped="0"
-           time="4.132">
+           time="57.645">
   <properties />
-            <testcase name="TC03_Check_Action_On_Helping_Menu" time="4.132" classname="hahalolo.newsfeed.CheckRedirectCorrectLink">
-                <failure type="org.openqa.selenium.WebDriverException"
-                  message="Failed to decode response from marionette
+            <testcase name="editNormalPost" time="0.084" classname="hahalolo.newsfeed.NewsfeedTab.PostFunction.TestcaseOfPost">
+                <failure type="org.openqa.selenium.ElementClickInterceptedException"
+                  message="Element &lt;div class=&quot;uri-name&quot;&gt; is not clickable at point (1121,30) because another element &lt;div class=&quot;hl-editor__backdrop&quot;&gt; obscures it
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;DESKTOP-GSFBD5T&apos;, ip: &apos;10.0.1.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.1&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200708170202, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 8040, moz:profile: C:\Users\HUY HO\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 67800cfb-9b10-443e-9343-0a50954192ac
-*** Element info: {Using=xpath, value=//i[@class = &apos;ic ic-question-circle-primary&apos;]/parent::span/following-sibling::div/a[text() = &apos;Điều khoản&apos;]}"
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 79.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200720193547, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 2340, moz:profile: C:\Users\HUY HO\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: abe0d2ca-0fd5-480e-908f-1ea75a9d3882"
               >
-<![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <div class="uri-name"> is not clickable at point (1121,30) because another element <div class="hl-editor__backdrop"> obscures it
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'DESKTOP-GSFBD5T', ip: '10.0.1.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 78.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200708170202, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 8040, moz:profile: C:\Users\HUY HO\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 67800cfb-9b10-443e-9343-0a50954192ac
-*** Element info: {Using=xpath, value=//i[@class = 'ic ic-question-circle-primary']/parent::span/following-sibling::div/a[text() = 'Điều khoản']}
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 79.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200720193547, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 2340, moz:profile: C:\Users\HUY HO\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: abe0d2ca-0fd5-480e-908f-1ea75a9d3882
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -34,18 +32,11 @@ Session ID: 67800cfb-9b10-443e-9343-0a50954192ac
   org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
   org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
   org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-  org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-  org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-  org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-  org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-  common.Function.AbstractPage.waitElementToClickAble(AbstractPage.java:346)
-  PageObject.newsfeed.Common.AbstractMenuPage.clickFunctionOnHelping(AbstractMenuPage.java:27)
-  hahalolo.newsfeed.CheckRedirectCorrectLink.TC03_Check_Action_On_Helping_Menu(CheckRedirectCorrectLink.java:87)
+  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+  common.Function.AbstractPage.clickToElement(AbstractPage.java:154)
+  PageObject.newsfeed.PageFeed.NewsfeedTabPageObject.clickToUserHomePage(NewsfeedTabPageObject.java:112)
+  hahalolo.newsfeed.NewsfeedTab.PostFunction.TestcaseOfPost.editNormalPost(TestcaseOfPost.java:92)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -76,5 +67,6 @@ Session ID: 67800cfb-9b10-443e-9343-0a50954192ac
           </testcase>
   
   
-  
+            <testcase name="createNewNormalPost" time="57.561" classname="hahalolo.newsfeed.NewsfeedTab.PostFunction.TestcaseOfPost" />
+      
 </testsuite>

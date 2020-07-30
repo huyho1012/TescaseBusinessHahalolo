@@ -1,8 +1,8 @@
 package common;
 
 public class Global_Constant {
-    public static String USER_NAME = "balo_04@mailinator.com";
-    public static String PASSWORD = "123456";
+    public static String USER_NAME = "khotrauchien@mailinator.com";
+    public static String PASSWORD = "111111";
     // URL các project Hahalolo
     public static final String URL_NEWS_FEED_LOGIN = "https://test-newsfeed.hahalolo.com/auth/signin";
     public static final String URL_BUSINESS_LOGIN = "";
@@ -16,7 +16,11 @@ public class Global_Constant {
     public static final String UPLOAD_FOLDER = ROOT_FOLDER+"\\FileUpload\\";
 
 
-    public static final String uploadMultipleByChromeAuto = Global_Constant.ROOT_FOLDER + "\\AutoIT\\chromeUploadMultiple.exe";
-    public static final String uploadMultipleByFirefoxAuto = Global_Constant.ROOT_FOLDER + "\\AutoIT\\firefoxUploadMultiple.exe";
+    public static final String uploadMultipleByChromeAuto = Global_Constant.ROOT_FOLDER + "\\libraries\\AutoIT\\chromeUploadMultiple.exe";
+    public static final String uploadMultipleByFirefoxAuto = Global_Constant.ROOT_FOLDER + "\\libraries\\AutoIT\\firefoxUploadMultiple.exe";
+
+    public static final String URL_BUSINESS_PAGE = "https://test-business.hahalolo.com/";
+
+    public static final String UPLOAD_BUTTON = "//div[@class = 'note-editor']//input[@type='file']";
 
 }

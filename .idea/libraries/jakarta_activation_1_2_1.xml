@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jakarta.activation-1.2.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libraries/Lorem Dummny Data/jakarta.activation-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/Lorem Dummny Data/java-reflection-3.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/Lorem Dummny Data/lorem-ipsum-objects-4.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/Lorem Dummny Data/slf4j-api-1.7.21.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

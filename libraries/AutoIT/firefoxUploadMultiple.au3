@@ -1,4 +1,4 @@
-WinWait("File Upload", "", "30")
+"D:\TescaseBusinessHahalolo\WinWait("File Upload", "", "30")
 Local $counter = 1
 Do
   Send('"')

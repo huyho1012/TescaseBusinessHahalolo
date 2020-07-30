@@ -15,7 +15,7 @@
     <test name="Test with firefox">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="hahalolo.newsfeed.CheckRedirectCorrectLink"></class>
+            <class name="hahalolo.newsfeed.NewsfeedTab.PostFunction.TestcaseOfPost"></class>
         </classes>
     </test>
 </suite>

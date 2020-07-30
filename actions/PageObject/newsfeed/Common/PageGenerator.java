@@ -2,10 +2,13 @@ package PageObject.newsfeed.Common;
 
 import PageObject.business.Business.BusinessDashboardPageObject;
 import PageObject.newsfeed.AccountSetting.GeneralAccountPageObject;
+import PageObject.newsfeed.PageFeed.PostFunction.PostPageObject;
+import PageObject.newsfeed.PersonalWall.PersonalTimelinePageObject;
 import PageObject.newsfeed.StartingProject.LoginPageObject;
 import PageObject.newsfeed.PageFeed.*;
 import PageObject.newsfeed.PersonalWall.Handnote.TourHandnotePageObject;
 import org.openqa.selenium.WebDriver;
+import pageUI.newsfeed.PersonalWall.PersonalTimelinePageUI;
 
 public class PageGenerator {
     public static ExperienceTabPageObject getExperienceFeed(WebDriver driver){
@@ -37,6 +40,12 @@ public class PageGenerator {
     }
     public static BusinessDashboardPageObject getBusinessDashboardPage(WebDriver driver){
         return new BusinessDashboardPageObject(driver);
+    }
+    public static PersonalTimelinePageObject getPersonalTimeLinePage(WebDriver driver){
+        return new PersonalTimelinePageObject(driver);
+    }
+    public static PostPageObject openNormalPostEditor(WebDriver driver){
+        return new PostPageObject(driver);
     }
 }
 

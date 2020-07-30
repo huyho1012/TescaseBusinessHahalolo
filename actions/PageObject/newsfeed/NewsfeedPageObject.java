@@ -2,7 +2,7 @@ package PageObject.newsfeed;
 
 import common.Function.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.NewsfeedPageIU;
+import pageUI.newsfeed.PageFeed.NewsFeedPageIU;
 
 public class NewsfeedPageObject extends AbstractPage {
     WebDriver driver;
@@ -11,7 +11,7 @@ public class NewsfeedPageObject extends AbstractPage {
     }
 
     public void clickCreateNormalPost() {
-        waitElementToClickAble(driver, NewsfeedPageIU.NORMAL_POST_FUNCTION);
-        clickToElement(driver,NewsfeedPageIU.NORMAL_POST_FUNCTION);
+        waitElementToClickAble(driver, NewsFeedPageIU.NORMAL_POST_FUNCTION);
+        clickToElement(driver, NewsFeedPageIU.NORMAL_POST_FUNCTION);
     }
 }

@@ -58,8 +58,8 @@ public class LoginPageObject extends AbstractMenuPage {
     }
 
     public void clickSignUpButton() {
-        waitElementToClickAble(driver,LoginPageUI.SIGN_UP_BUTTON);
-        clickToElement(driver,LoginPageUI.SIGN_UP_BUTTON);
+        waitElementToClickAble(driver,LoginPageUI.LOGIN_BUTTON);
+        clickToElement(driver,LoginPageUI.LOGIN_BUTTON);
     }
 
     public String getValidateFirstNameSignUp() {

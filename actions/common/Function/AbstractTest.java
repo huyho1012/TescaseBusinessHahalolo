@@ -1,5 +1,6 @@
 package common.Function;
 
+import de.svenjacobs.loremipsum.LoremIpsum;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
@@ -9,11 +10,15 @@ import org.testng.Reporter;
 import java.util.Random;
 public class AbstractTest {
     protected final Log log;
+    protected final LoremIpsum lorem;
 
     protected AbstractTest() {
         log = LogFactory.getLog(getClass());
+        lorem  = new LoremIpsum();
     }
-
+    public String randomParagraphs(int numParagraph){
+        return lorem.getParagraphs(numParagraph);
+    }
     protected String randomPassword(int chars) {
         String text = null;
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
