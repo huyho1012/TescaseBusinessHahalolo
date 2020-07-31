@@ -4,6 +4,7 @@ import PageObject.newsfeed.Common.AbstractMenuPage;
 import common.Function.AbstractTest;
 import org.openqa.selenium.WebDriver;
 import pageUI.newsfeed.PageFeed.NewsFeedPageIU;
+import pageUI.newsfeed.PageFeed.PostModelUI;
 
 public class PersonalTimelinePageObject extends AbstractMenuPage {
     WebDriver driver;
@@ -15,14 +16,8 @@ public class PersonalTimelinePageObject extends AbstractMenuPage {
         return true;
     }
 
-    public void goToNormalPost() {
-    }
-
-    public void openFunction(WebDriver driver, String postContent, String authorName, String functionPost){
-        waitElementToVisible(driver, NewsFeedPageIU.MENU_FUNCTION_WITH_DIRECT_POST,postContent,authorName);
-        clickToElement(driver,NewsFeedPageIU.MENU_FUNCTION_WITH_DIRECT_POST,postContent,authorName);
-        setTimeDelay(2);
-        waitElementToClickAble(driver,NewsFeedPageIU.ITEM_FUNCTION_WITH_DIRECT_POST,postContent,authorName,functionPost);
-        clickToElement(driver,NewsFeedPageIU.ITEM_FUNCTION_WITH_DIRECT_POST,postContent,authorName,functionPost);
+    public boolean checkCreatedPostSuccessfully(WebDriver driver,String authorName, String postContent) {
+        waitElementToVisible(driver, PostModelUI.DIRECT_POST_WITH_AUTHOR_CONTENT_TAGGING,authorName, postContent);
+        return checkIsDisplayedElement(driver, PostModelUI.DIRECT_POST_WITH_AUTHOR_CONTENT_TAGGING,authorName, postContent);
     }
 }

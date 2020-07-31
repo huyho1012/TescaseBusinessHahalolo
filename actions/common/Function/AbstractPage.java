@@ -200,6 +200,10 @@ public abstract class AbstractPage {
         element = findElement(driver,locator);
         return element.isDisplayed();
     }
+    public boolean checkIsDisplayedElement(WebDriver driver, String locator, String... values){
+        element = findElement(driver,castToObject(locator, values));
+        return element.isDisplayed();
+    }
     public boolean checkIsEnableElement(WebDriver driver, String locator){
         return findElement(driver,locator).isEnabled();
     }
@@ -372,4 +376,14 @@ public abstract class AbstractPage {
             return true;
         } else return false;
     }
+
+    public void removeTextOnElement(WebDriver driver, String locator){
+        element = findElement(driver,locator);
+        elements.clear();
+    }
+    public void removeTextOnElement(WebDriver driver, String locator, String...values){
+        element = findElement(driver,castToObject(locator,values));
+        elements.clear();
+    }
+
 }
