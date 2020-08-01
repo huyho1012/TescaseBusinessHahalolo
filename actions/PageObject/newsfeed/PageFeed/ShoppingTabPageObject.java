@@ -2,7 +2,7 @@ package PageObject.newsfeed.PageFeed;
 
 import PageObject.newsfeed.Common.AbstractMenuPage;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.Common.HeaderPageUI;
+import pageUI.Newsfeed.Common.HeaderPageUI;
 
 public class ShoppingTabPageObject extends AbstractMenuPage {
     WebDriver driver;

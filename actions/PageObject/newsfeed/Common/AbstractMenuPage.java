@@ -2,7 +2,7 @@ package PageObject.newsfeed.Common;
 
 import common.Function.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.Common.HeaderPageUI;
+import pageUI.Newsfeed.Common.HeaderPageUI;
 
 public class AbstractMenuPage extends AbstractPage {
     public void clickToElementOnMenu(WebDriver driver, String menuItem) {

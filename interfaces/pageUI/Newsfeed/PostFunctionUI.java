@@ -1,4 +1,4 @@
-package pageUI.newsfeed;
+package pageUI.Newsfeed;
 
 public class PostFunctionUI {
     public static final String menuPostFunction = "//i[contains(),'%s']";

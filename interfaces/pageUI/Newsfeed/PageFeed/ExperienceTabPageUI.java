@@ -1,4 +1,4 @@
-package pageUI.newsfeed.PageFeed;
+package pageUI.Newsfeed.PageFeed;
 
 public class ExperienceTabPageUI {
     public static final String SEARCH_FORM_EXPERIENCE = "//button[@id ='js_btn_search_exp']";

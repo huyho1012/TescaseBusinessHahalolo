@@ -3,9 +3,14 @@ package common;
 public class Global_Constant {
     public static String USER_NAME = "khotrauchien@mailinator.com";
     public static String PASSWORD = "111111";
+
+    public static String BACKEND_USER_NAME = "zero@gmail.com";
+    public static String BACKEND_PASSWORD = "abc123-=";
     // URL các project Hahalolo
     public static final String URL_NEWS_FEED_LOGIN = "https://test-newsfeed.hahalolo.com/auth/signin";
     public static final String URL_BUSINESS_LOGIN = "";
+    public static final String URL_MAILINATOR = "https://www.mailinator.com/";
+    public static final String URL_BACKEND_LOGIN = "https://test-backend.hahalolo.com/auth/signin";
     // Constant
     public static final long LONG_TIME_OUT = 30;
     public static final long LESS_TIME_OUT = 5;
@@ -23,4 +28,10 @@ public class Global_Constant {
 
     public static final String UPLOAD_BUTTON = "//div[@class = 'note-editor']//input[@type='file']";
 
+
+    public static final String MAIl_SEARCH_BOX = "//input[@id = 'addOverlay']";
+    public static final String SEARCH_BOX = "//button[@id = 'go-to-public']";
+    public static final String EMAIL_VERIFY_ACCOUNT = "//a[contains(text(),'Xác thực tài khoản Hahalolo')]";
+    public static final String FRAME_BODY_MESSAGE = "//iframe[@id = 'msg_body']";
+    public static final String VERIFY_CODE_VALUE = "//p[contains(text(),'Bạn có thể được yêu cầu nhập mã xác nhận này:')]/following-sibling::h2";
 }

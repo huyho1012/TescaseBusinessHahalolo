@@ -5,11 +5,9 @@ import PageObject.newsfeed.Common.PageGenerator;
 import PageObject.newsfeed.PageFeed.PostFunction.PostModelObject;
 import PageObject.newsfeed.PersonalWall.PersonalTimelinePageObject;
 import org.openqa.selenium.WebDriver;
-import pageUI.Common.MediaManagerUI;
-import pageUI.newsfeed.Common.HeaderPageUI;
-import pageUI.newsfeed.Common.sidebarRightUI;
-import pageUI.newsfeed.PageFeed.NewsFeedPageIU;
-import pageUI.newsfeed.PageFeed.PostModelUI;
+import pageUI.Newsfeed.Common.HeaderPageUI;
+import pageUI.Newsfeed.Common.sidebarRightUI;
+import pageUI.Newsfeed.PageFeed.NewsFeedPageIU;
 
 public class NewsfeedTabPageObject extends AbstractMenuPage {
     WebDriver driver;
@@ -49,5 +47,10 @@ public class NewsfeedTabPageObject extends AbstractMenuPage {
         waitElementToVisible(driver, HeaderPageUI.PERSONAL_URL_LINK);
         clickToElement(driver,HeaderPageUI.PERSONAL_URL_LINK);
         return PageGenerator.getPersonalTimeLinePage(driver);
+    }
+
+    public void clickCancelUpdateNewInfo() {
+        waitElementToClickAble(driver, NewsFeedPageIU.CANCEL_UPDATE_NEW_INFO_BUTTON);
+        clickToElement(driver,NewsFeedPageIU.CANCEL_UPDATE_NEW_INFO_BUTTON);
     }
 }

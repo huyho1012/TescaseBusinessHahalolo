@@ -1,7 +1,7 @@
 package hahalolo.newsfeed.StartIngApp;
 
 import PageObject.newsfeed.StartingProject.LoginPageObject;
-import PageObject.newsfeed.StartingProject.VerifyPageObject;
+import PageObject.newsfeed.StartingProject.VerificationAccountPageObject;
 import common.Function.AbstractTest;
 import common.Global_Constant;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SignUpTestcase extends AbstractTest {
     WebDriver driver;
-    VerifyPageObject verifyPage;
+    VerificationAccountPageObject verifyPage;
     LoginPageObject loginPage;
     public String email ="huy.hodoan"+randomEmail()+"@mailinantor.com";
     @BeforeClass
@@ -239,7 +239,7 @@ public class SignUpTestcase extends AbstractTest {
         loginPage.inputDataOnPasswordSignUp("123456");
         loginPage.inputDataOnConfirmPasswordSignUp("123456");
         loginPage.clickSignUpButton();
-        verifyPage = new VerifyPageObject(driver);
+        verifyPage = new VerificationAccountPageObject(driver);
         Assert.assertTrue(verifyPage.checkTitlePageVerifyEmail());
         Assert.assertTrue(verifyPage.checkEmailDisplayOnRegisterPage(email));
     }
@@ -301,7 +301,7 @@ public class SignUpTestcase extends AbstractTest {
         loginPage.inputDataOnPasswordSignUp("123456");
         loginPage.inputDataOnConfirmPasswordSignUp("123456");
         loginPage.clickSignUpButton();
-        verifyPage = new VerifyPageObject(driver);
+        verifyPage = new VerificationAccountPageObject(driver);
         Assert.assertTrue(verifyPage.checkTitlePageVerifyEmail());
         verifyPage.inputVerifyDataOnField("");
         verifyPage.clickVerifyButton();

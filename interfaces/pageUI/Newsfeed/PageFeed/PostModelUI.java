@@ -1,4 +1,4 @@
-package pageUI.newsfeed.PageFeed;
+package pageUI.Newsfeed.PageFeed;
 
 public class PostModelUI {
     public static final String TITLE_EDIT_NORMAL_POST = "//h6/span[contains(text(),'Chỉnh sửa bài viết')]";

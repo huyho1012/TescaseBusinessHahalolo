@@ -1,4 +1,4 @@
-package pageUI.newsfeed.PageFeed;
+package pageUI.Newsfeed.PageFeed;
 
 public class ShoppingTabPageUI {
 }

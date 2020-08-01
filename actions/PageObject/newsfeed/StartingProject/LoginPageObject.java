@@ -1,9 +1,14 @@
 package PageObject.newsfeed.StartingProject;
 
+import PageObject.Backend.BackendLoginPageObject;
 import PageObject.newsfeed.Common.AbstractMenuPage;
+import PageObject.newsfeed.Common.PageGenerator;
 import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
+import common.Global_Constant;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.StartWeb.LoginPageUI;
+import pageUI.Newsfeed.StartWeb.LoginPageUI;
+
+import java.util.ArrayList;
 
 public class LoginPageObject extends AbstractMenuPage {
     WebDriver driver;
@@ -24,11 +29,11 @@ public class LoginPageObject extends AbstractMenuPage {
         clickToElement(driver,LoginPageUI.LOGIN_BUTTON);
         return new NewsfeedTabPageObject(driver);
     }
-    public String getValidationErrorMessageOnUsernameLogin(){
+    public String getValidateErrUsernameLogin(){
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_USERNAME);
         return getTextOfElement(driver, LoginPageUI.VALIDATE_ERROR_MESSAGE_USERNAME);
     }
-    public String getValidationErrorMessageOnPasswordLogin(){
+    public String getValidateErrPassLogin(){
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_PASSWORD);
         return getTextOfElement(driver, LoginPageUI.VALIDATE_ERROR_MESSAGE_PASSWORD);
     }
@@ -57,9 +62,10 @@ public class LoginPageObject extends AbstractMenuPage {
         sendKeyToElement(driver,LoginPageUI.CONFIRM_PASSWORD_TEXT_BOX,confirmPass);
     }
 
-    public void clickSignUpButton() {
-        waitElementToClickAble(driver,LoginPageUI.LOGIN_BUTTON);
-        clickToElement(driver,LoginPageUI.LOGIN_BUTTON);
+    public VerificationAccountPageObject clickSignUpButton() {
+        waitElementToClickAble(driver,LoginPageUI.SIGN_UP_BUTTON);
+        clickToElement(driver,LoginPageUI.SIGN_UP_BUTTON);
+        return PageGenerator.getVerifyAccountPage(driver);
     }
 
     public String getValidateFirstNameSignUp() {
@@ -98,5 +104,16 @@ public class LoginPageObject extends AbstractMenuPage {
     public String getValidateConfirmPassSignUp() {
         waitElementToVisible(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_CONFIRM_PASS);
         return getTextOfElement(driver,LoginPageUI.VALIDATE_ERROR_MESSAGE_FROM_CONFIRM_PASS);
+    }
+
+    public boolean checkLogoutSuccess() {
+        waitElementToVisible(driver,LoginPageUI.TITLE_REGISTER_FORM);
+        return checkIsDisplayedElement(driver,LoginPageUI.TITLE_REGISTER_FORM);
+    }
+
+    public BackendLoginPageObject goToBackendLoginPage() {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        openNewWindow(driver, Global_Constant.URL_BACKEND_LOGIN);
+        return PageGenerator.getLoginBackendPage(driver);
     }
 }

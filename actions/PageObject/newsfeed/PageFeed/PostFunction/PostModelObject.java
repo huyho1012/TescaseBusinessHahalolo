@@ -3,15 +3,10 @@ package PageObject.newsfeed.PageFeed.PostFunction;
 import PageObject.newsfeed.Common.PageGenerator;
 import PageObject.newsfeed.PersonalWall.PersonalTimelinePageObject;
 import common.Function.AbstractPage;
-import common.Global_Constant;
 import org.openqa.selenium.WebDriver;
 import pageUI.Common.MediaManagerUI;
-import pageUI.newsfeed.Common.HeaderPageUI;
-import pageUI.newsfeed.PageFeed.NewsFeedPageIU;
-import pageUI.newsfeed.PageFeed.PostModelUI;
-import pageUI.newsfeed.PostFunctionUI;
-
-import java.io.IOException;
+import pageUI.Newsfeed.PageFeed.NewsFeedPageIU;
+import pageUI.Newsfeed.PageFeed.PostModelUI;
 
 public class PostModelObject extends AbstractPage {
     WebDriver driver;

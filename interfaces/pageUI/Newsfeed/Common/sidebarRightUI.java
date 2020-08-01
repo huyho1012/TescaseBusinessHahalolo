@@ -1,4 +1,4 @@
-package pageUI.newsfeed.Common;
+package pageUI.Newsfeed.Common;
 
 public class sidebarRightUI {
     public static final String titleHotExp = "//div[@class ='widget-header__title'][text() ='Trải nghiệm nổi bật']";

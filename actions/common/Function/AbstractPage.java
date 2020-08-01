@@ -1,21 +1,17 @@
 package common.Function;
 
 import common.Global_Constant;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageUI.newsfeed.Common.HeaderPageUI;
-import pageUI.newsfeed.PostFunctionUI;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -187,6 +183,10 @@ public abstract class AbstractPage {
         element = findElement(driver,locator);
         return element.getText();
     }
+    public String getTextOfElement(WebDriver driver, String locator, String... values){
+        element = findElement(driver,castToObject(locator,values));
+        return element.getText();
+    }
     public String getAttributeOfElement(WebDriver driver, String locator, String attributeValue){
         element = findElement(driver,locator);
         return element.getAttribute(attributeValue);
@@ -292,6 +292,13 @@ public abstract class AbstractPage {
         setTimeDelay(3);
     }
     // Javascript Executor
+    public void openNewWindow(WebDriver driver, String urlLink){
+        jsExecutor =(JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        openURL(driver,urlLink);
+    }
     public void sendKeyToElementByJS(WebDriver driver,String locator, String valueName){
         jsExecutor =(JavascriptExecutor) driver;
         element = findElement(driver,locator);

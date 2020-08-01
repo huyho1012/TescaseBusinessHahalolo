@@ -1,4 +1,4 @@
-package pageUI.newsfeed.StartWeb;
+package pageUI.Newsfeed.StartWeb;
 
 public class LoginPageUI {
 
@@ -8,8 +8,6 @@ public class LoginPageUI {
     public static final String VALIDATE_ERROR_MESSAGE_USERNAME ="//input[@id ='signin-identity']/following-sibling::div";
     public static final String VALIDATE_ERROR_MESSAGE_PASSWORD ="//input[@id ='password']/following-sibling::div";
     public static final String FORGOT_LINK = "//a[@class='forgotpw']";
-    public static final String TITLE_SIGN_UP_FORM = "//div[@class='title']";
-
 
     public static final String FIRST_NAME_TEXT_BOX = "//input[@name = 'nv104']";
     public static final String LAST_NAME_TEXT_BOX = "//input[@name = 'nv103']";
@@ -27,4 +25,7 @@ public class LoginPageUI {
 
     public static final String ENGLISH_BUTTON = "//span[text() = 'English']";
     public static final String VIETNAMESE_BUTTON = "//span[text() = 'Tiếng Việt']";
+
+    public static final String TITLE_REGISTER_FORM = "//div[@class = 'form-signup-header']/div[contains(text(),'Tham gia Hahalolo ngay!')]";
+
 }

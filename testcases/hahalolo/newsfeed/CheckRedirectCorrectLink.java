@@ -2,7 +2,6 @@ package hahalolo.newsfeed;
 
 import PageObject.business.Business.BusinessDashboardPageObject;
 import PageObject.newsfeed.AccountSetting.GeneralAccountPageObject;
-import PageObject.newsfeed.Common.AbstractMenuPage;
 import PageObject.newsfeed.Common.PageGenerator;
 import PageObject.newsfeed.StartingProject.LoginPageObject;
 import PageObject.newsfeed.PageFeed.*;
@@ -12,7 +11,6 @@ import common.DriverBrowser.DriverManager;
 import common.Function.AbstractTest;
 import common.Global_Constant;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -40,7 +38,7 @@ public class CheckRedirectCorrectLink extends AbstractTest {
     loginPage.enterUsernameToLogin(Global_Constant.USER_NAME);
     loginPage.enterPasswordToLogin(Global_Constant.PASSWORD);
     loginPage.clickToLoginButton();
-    newsfeedPage = PageGenerator.getNewsFeed(driver);
+    newsfeedPage = PageGenerator.getNewsFeedPage(driver);
     newsfeedPage.changeLanguageDisplay();
     titlePage= driver.getWindowHandle();
     }

@@ -1,4 +1,4 @@
-package pageUI.newsfeed.StartWeb;
+package pageUI.Newsfeed.StartWeb;
 
 public class ForgotPasswordUI {
 }

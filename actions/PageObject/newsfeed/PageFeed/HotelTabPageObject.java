@@ -2,7 +2,7 @@ package PageObject.newsfeed.PageFeed;
 
 import PageObject.newsfeed.Common.AbstractMenuPage;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.PageFeed.HotelTabPageUI;
+import pageUI.Newsfeed.PageFeed.HotelTabPageUI;
 
 public class HotelTabPageObject extends AbstractMenuPage {
     WebDriver driver;

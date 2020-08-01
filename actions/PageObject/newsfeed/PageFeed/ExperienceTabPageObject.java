@@ -2,8 +2,7 @@ package PageObject.newsfeed.PageFeed;
 
 import PageObject.newsfeed.Common.AbstractMenuPage;
 import org.openqa.selenium.WebDriver;
-import pageUI.newsfeed.Common.HeaderPageUI;
-import pageUI.newsfeed.PageFeed.ExperienceTabPageUI;
+import pageUI.Newsfeed.PageFeed.ExperienceTabPageUI;
 
 public class ExperienceTabPageObject extends AbstractMenuPage {
     WebDriver driver;
