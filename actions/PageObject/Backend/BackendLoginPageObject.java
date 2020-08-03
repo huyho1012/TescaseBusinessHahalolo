@@ -1,6 +1,6 @@
 package PageObject.Backend;
 
-import PageObject.newsfeed.Common.PageGenerator;
+import common.Function.PageGenerator;
 import common.Function.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import pageUI.Backend.LoginPageUI;

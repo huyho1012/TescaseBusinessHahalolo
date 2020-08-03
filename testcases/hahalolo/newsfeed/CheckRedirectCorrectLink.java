@@ -2,8 +2,8 @@ package hahalolo.newsfeed;
 
 import PageObject.business.Business.BusinessDashboardPageObject;
 import PageObject.newsfeed.AccountSetting.GeneralAccountPageObject;
-import PageObject.newsfeed.Common.PageGenerator;
-import PageObject.newsfeed.StartingProject.LoginPageObject;
+import common.Function.PageGenerator;
+import PageObject.newsfeed.Starting.NewsFeed_Login;
 import PageObject.newsfeed.PageFeed.*;
 import PageObject.newsfeed.PersonalWall.Handnote.TourHandnotePageObject;
 import common.DriverBrowser.BrowserDriver;
@@ -17,14 +17,14 @@ import org.testng.annotations.Test;
 
 public class CheckRedirectCorrectLink extends AbstractTest {
     WebDriver driver;
-    LoginPageObject loginPage;
-    ExperienceTabPageObject experiencePage;
+    NewsFeed_Login loginPage;
+    NF_ExperiencePage experiencePage;
     HotelTabPageObject hotelPage;
     TourTabPageObject tourPage;
     DriverManager driverManager;
     ShoppingTabPageObject shopPage;
     NewsfeedTabPageObject newsfeedPage;
-    FlightTabPageObject flightPage;
+    NF_FlighPage flightPage;
     String titlePage;
     BusinessDashboardPageObject businessPage;
     GeneralAccountPageObject accountSettingPage;

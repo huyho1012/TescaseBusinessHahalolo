@@ -1,10 +1,10 @@
 package hahalolo.newsfeed.NewsfeedTab.PostFunction;
 
-import PageObject.newsfeed.Common.PageGenerator;
+import common.Function.PageGenerator;
 import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
 import PageObject.newsfeed.PersonalWall.PersonalTimelinePageObject;
-import PageObject.newsfeed.StartingProject.LoginPageObject;
-import PageObject.newsfeed.PageFeed.PostFunction.PostModelObject;
+import PageObject.newsfeed.Starting.NewsFeed_Login;
+import PageObject.newsfeed.PageFeed.PostFunction.EditorFunction;
 import common.DriverBrowser.BrowserDriver;
 import common.DriverBrowser.DriverManager;
 import common.Function.AbstractTest;
@@ -17,10 +17,10 @@ import org.testng.annotations.Test;
 public class TestcaseOfPost extends AbstractTest {
     WebDriver driver;
     DriverManager driverManager;
-    LoginPageObject loginPage;
+    NewsFeed_Login loginPage;
     NewsfeedTabPageObject newsFeedPage;
     PersonalTimelinePageObject perTimelinePage;
-    PostModelObject postPage;
+    EditorFunction postPage;
     String contentPost = "Hahalolo này còn ai đẹp hơn ta";
     String updateContent = "Xiến chi 19 tủi";
     String authorName = "Chúa Tể Khô";

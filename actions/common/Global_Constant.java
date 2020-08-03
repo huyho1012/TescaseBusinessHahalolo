@@ -4,11 +4,11 @@ public class Global_Constant {
     public static String USER_NAME = "khotrauchien@mailinator.com";
     public static String PASSWORD = "111111";
 
-    public static String BACKEND_USER_NAME = "zero@gmail.com";
-    public static String BACKEND_PASSWORD = "abc123-=";
+    public static String BACKEND_USER_NAME = "balo_04@mailinator.com";
+    public static String BACKEND_PASSWORD = "123456";
     // URL các project Hahalolo
     public static final String URL_NEWS_FEED_LOGIN = "https://test-newsfeed.hahalolo.com/auth/signin";
-    public static final String URL_BUSINESS_LOGIN = "";
+    public static final String URL_BUSINESS_PAGE = "https://test-business.hahalolo.com/";
     public static final String URL_MAILINATOR = "https://www.mailinator.com/";
     public static final String URL_BACKEND_LOGIN = "https://test-backend.hahalolo.com/auth/signin";
     // Constant
@@ -19,16 +19,9 @@ public class Global_Constant {
     // Đường dẫn thư mục
     public static final String ROOT_FOLDER = System.getProperty("user.dir");
     public static final String UPLOAD_FOLDER = ROOT_FOLDER+"\\FileUpload\\";
-
-
     public static final String uploadMultipleByChromeAuto = Global_Constant.ROOT_FOLDER + "\\libraries\\AutoIT\\chromeUploadMultiple.exe";
     public static final String uploadMultipleByFirefoxAuto = Global_Constant.ROOT_FOLDER + "\\libraries\\AutoIT\\firefoxUploadMultiple.exe";
-
-    public static final String URL_BUSINESS_PAGE = "https://test-business.hahalolo.com/";
-
-    public static final String UPLOAD_BUTTON = "//div[@class = 'note-editor']//input[@type='file']";
-
-
+    // Mailinator
     public static final String MAIl_SEARCH_BOX = "//input[@id = 'addOverlay']";
     public static final String SEARCH_BOX = "//button[@id = 'go-to-public']";
     public static final String EMAIL_VERIFY_ACCOUNT = "//a[contains(text(),'Xác thực tài khoản Hahalolo')]";

@@ -1,15 +1,15 @@
 package PageObject.newsfeed.PageFeed;
 
-import PageObject.newsfeed.Common.AbstractMenuPage;
-import PageObject.newsfeed.Common.PageGenerator;
-import PageObject.newsfeed.PageFeed.PostFunction.PostModelObject;
+import PageObject.newsfeed.Common.HeaderMenu;
+import common.Function.PageGenerator;
+import PageObject.newsfeed.PageFeed.PostFunction.EditorFunction;
 import PageObject.newsfeed.PersonalWall.PersonalTimelinePageObject;
 import org.openqa.selenium.WebDriver;
 import pageUI.Newsfeed.Common.HeaderPageUI;
 import pageUI.Newsfeed.Common.sidebarRightUI;
 import pageUI.Newsfeed.PageFeed.NewsFeedPageIU;
 
-public class NewsfeedTabPageObject extends AbstractMenuPage {
+public class NewsfeedTabPageObject extends HeaderMenu {
     WebDriver driver;
     public NewsfeedTabPageObject(WebDriver webDriver){
         driver = webDriver;
@@ -37,7 +37,7 @@ public class NewsfeedTabPageObject extends AbstractMenuPage {
         return checkIsDisplayedElement(driver, HeaderPageUI.CART_FUNCTION);
     }
 
-    public PostModelObject clickToNormalPostFunction() {
+    public EditorFunction clickToNormalPostFunction() {
         waitElementToClickAble(driver, NewsFeedPageIU.NORMAL_POST_FUNCTION);
         clickToElement(driver, NewsFeedPageIU.NORMAL_POST_FUNCTION);
         return PageGenerator.openNormalPostEditor(driver);

@@ -1,12 +1,12 @@
 package PageObject.newsfeed.PageFeed;
 
-import PageObject.newsfeed.Common.AbstractMenuPage;
+import PageObject.newsfeed.Common.HeaderMenu;
 import org.openqa.selenium.WebDriver;
 import pageUI.Newsfeed.PageFeed.FlightTabPageUI;
 
-public class FlightTabPageObject extends AbstractMenuPage {
+public class NF_FlighPage extends HeaderMenu {
     WebDriver driver;
-    public FlightTabPageObject(WebDriver webDriver){
+    public NF_FlighPage(WebDriver webDriver){
         driver = webDriver;
     }
 

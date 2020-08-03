@@ -1,6 +1,6 @@
-package PageObject.newsfeed.StartingProject;
+package PageObject.newsfeed.Starting;
 
-import PageObject.newsfeed.Common.PageGenerator;
+import common.Function.PageGenerator;
 import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
 import common.Function.AbstractPage;
 import common.Global_Constant;
@@ -9,9 +9,9 @@ import pageUI.Newsfeed.StartWeb.VerificationAccountPageUI;
 
 import java.util.ArrayList;
 
-public class VerificationAccountPageObject extends AbstractPage {
+public class NewsFeed_VerifyAccount extends AbstractPage {
     WebDriver driver;
-    public VerificationAccountPageObject(WebDriver webDriver){
+    public NewsFeed_VerifyAccount(WebDriver webDriver){
         driver = webDriver;
     }
 

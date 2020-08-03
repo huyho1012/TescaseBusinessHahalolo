@@ -1,8 +1,8 @@
-package PageObject.newsfeed.StartingProject;
+package PageObject.newsfeed.Starting;
 
 import PageObject.Backend.BackendLoginPageObject;
-import PageObject.newsfeed.Common.AbstractMenuPage;
-import PageObject.newsfeed.Common.PageGenerator;
+import PageObject.newsfeed.Common.HeaderMenu;
+import common.Function.PageGenerator;
 import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
 import common.Global_Constant;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +10,9 @@ import pageUI.Newsfeed.StartWeb.LoginPageUI;
 
 import java.util.ArrayList;
 
-public class LoginPageObject extends AbstractMenuPage {
+public class NewsFeed_Login extends HeaderMenu {
     WebDriver driver;
-    public LoginPageObject(WebDriver webDriver){
+    public NewsFeed_Login(WebDriver webDriver){
         driver = webDriver;
     }
     public void enterUsernameToLogin(String userName) {
@@ -62,7 +62,7 @@ public class LoginPageObject extends AbstractMenuPage {
         sendKeyToElement(driver,LoginPageUI.CONFIRM_PASSWORD_TEXT_BOX,confirmPass);
     }
 
-    public VerificationAccountPageObject clickSignUpButton() {
+    public NewsFeed_VerifyAccount clickSignUpButton() {
         waitElementToClickAble(driver,LoginPageUI.SIGN_UP_BUTTON);
         clickToElement(driver,LoginPageUI.SIGN_UP_BUTTON);
         return PageGenerator.getVerifyAccountPage(driver);

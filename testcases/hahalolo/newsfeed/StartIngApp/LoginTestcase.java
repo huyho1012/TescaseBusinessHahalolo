@@ -2,10 +2,10 @@ package hahalolo.newsfeed.StartIngApp;
 
 import PageObject.Backend.BackendLoginPageObject;
 import PageObject.Backend.backendDashboardPageObject;
-import PageObject.newsfeed.Common.PageGenerator;
+import common.Function.PageGenerator;
 import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
-import PageObject.newsfeed.StartingProject.LoginPageObject;
-import PageObject.newsfeed.StartingProject.VerificationAccountPageObject;
+import PageObject.newsfeed.Starting.NewsFeed_Login;
+import PageObject.newsfeed.Starting.NewsFeed_VerifyAccount;
 import common.DriverBrowser.BrowserDriver;
 import common.DriverBrowser.DriverManager;
 import common.Function.AbstractTest;
@@ -17,12 +17,12 @@ import org.testng.annotations.Test;
 
 public class LoginTestcase extends AbstractTest {
     WebDriver driver;
-    LoginPageObject loginPage;
+    NewsFeed_Login loginPage;
     DriverManager driverManager;
     NewsfeedTabPageObject newsFeedPage;
     BackendLoginPageObject backendLoginPage;
     backendDashboardPageObject backendDashboardPage;
-    VerificationAccountPageObject verifyAccountPage;
+    NewsFeed_VerifyAccount verifyAccountPage;
     String passWord ="123456";
     String confirmPassword = "123456";
     String firstName = "Huy";
@@ -92,8 +92,8 @@ public class LoginTestcase extends AbstractTest {
         backendLoginPage.setTimeDelay(10);
         backendDashboardPage = backendLoginPage.clickLoginButton();
         verifyTrue(backendDashboardPage.verifyLoginBackEndSuccess());
-//
-//        backenDashboard.clickAccountTabmenu();
+        backendDashboardPage.clickToItemOnMenu(driver,"Người dùng");
+        backendDashboardPage.clickToItemOnMenu(driver,"Tất cả người dùng");
 //        backendAccountManager = backenDashboard.clickAllAccountManagerTab();
 //        verifyTrue(backendAccountManager.checkAccountManagerPageIsDisplay());
 //

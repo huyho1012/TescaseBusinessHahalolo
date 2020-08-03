@@ -1,7 +1,7 @@
 package hahalolo.newsfeed.StartIngApp;
 
-import PageObject.newsfeed.StartingProject.LoginPageObject;
-import PageObject.newsfeed.StartingProject.VerificationAccountPageObject;
+import PageObject.newsfeed.Starting.NewsFeed_Login;
+import PageObject.newsfeed.Starting.NewsFeed_VerifyAccount;
 import common.Function.AbstractTest;
 import common.Global_Constant;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 public class SignUpTestcase extends AbstractTest {
     WebDriver driver;
-    VerificationAccountPageObject verifyPage;
-    LoginPageObject loginPage;
+    NewsFeed_VerifyAccount verifyPage;
+    NewsFeed_Login loginPage;
     public String email ="huy.hodoan"+randomEmail()+"@mailinantor.com";
     @BeforeClass
     public void openBrowser(){
@@ -23,7 +23,7 @@ public class SignUpTestcase extends AbstractTest {
         driver.get(Global_Constant.URL_NEWS_FEED_LOGIN);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Global_Constant.LONG_TIME_OUT, TimeUnit.SECONDS);
-        loginPage = new LoginPageObject(driver);
+        loginPage = new NewsFeed_Login(driver);
     }
     @BeforeMethod
     public void checkLanguageDisplay(){
@@ -239,7 +239,7 @@ public class SignUpTestcase extends AbstractTest {
         loginPage.inputDataOnPasswordSignUp("123456");
         loginPage.inputDataOnConfirmPasswordSignUp("123456");
         loginPage.clickSignUpButton();
-        verifyPage = new VerificationAccountPageObject(driver);
+        verifyPage = new NewsFeed_VerifyAccount(driver);
         Assert.assertTrue(verifyPage.checkTitlePageVerifyEmail());
         Assert.assertTrue(verifyPage.checkEmailDisplayOnRegisterPage(email));
     }
@@ -301,7 +301,7 @@ public class SignUpTestcase extends AbstractTest {
         loginPage.inputDataOnPasswordSignUp("123456");
         loginPage.inputDataOnConfirmPasswordSignUp("123456");
         loginPage.clickSignUpButton();
-        verifyPage = new VerificationAccountPageObject(driver);
+        verifyPage = new NewsFeed_VerifyAccount(driver);
         Assert.assertTrue(verifyPage.checkTitlePageVerifyEmail());
         verifyPage.inputVerifyDataOnField("");
         verifyPage.clickVerifyButton();

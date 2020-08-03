@@ -1,10 +1,10 @@
 package PageObject.newsfeed.PersonalWall;
 
-import PageObject.newsfeed.Common.AbstractMenuPage;
+import PageObject.newsfeed.Common.HeaderMenu;
 import org.openqa.selenium.WebDriver;
 import pageUI.Newsfeed.PageFeed.PostModelUI;
 
-public class PersonalTimelinePageObject extends AbstractMenuPage {
+public class PersonalTimelinePageObject extends HeaderMenu {
     WebDriver driver;
     public PersonalTimelinePageObject(WebDriver webDriver){
         driver = webDriver;

@@ -1,12 +1,12 @@
 package PageObject.newsfeed.PageFeed;
 
-import PageObject.newsfeed.Common.AbstractMenuPage;
+import PageObject.newsfeed.Common.HeaderMenu;
 import org.openqa.selenium.WebDriver;
 import pageUI.Newsfeed.PageFeed.ExperienceTabPageUI;
 
-public class ExperienceTabPageObject extends AbstractMenuPage {
+public class NF_ExperiencePage extends HeaderMenu {
     WebDriver driver;
-    public ExperienceTabPageObject (WebDriver webDriver){
+    public NF_ExperiencePage(WebDriver webDriver){
        driver = webDriver;
    }
 

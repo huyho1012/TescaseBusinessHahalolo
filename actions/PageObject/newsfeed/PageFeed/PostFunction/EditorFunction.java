@@ -1,6 +1,6 @@
 package PageObject.newsfeed.PageFeed.PostFunction;
 
-import PageObject.newsfeed.Common.PageGenerator;
+import common.Function.PageGenerator;
 import PageObject.newsfeed.PersonalWall.PersonalTimelinePageObject;
 import common.Function.AbstractPage;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +8,9 @@ import pageUI.Common.MediaManagerUI;
 import pageUI.Newsfeed.PageFeed.NewsFeedPageIU;
 import pageUI.Newsfeed.PageFeed.PostModelUI;
 
-public class PostModelObject extends AbstractPage {
+public class EditorFunction extends AbstractPage {
     WebDriver driver;
-    public PostModelObject(WebDriver webDriver){
+    public EditorFunction(WebDriver webDriver){
         driver= webDriver;
     }
 

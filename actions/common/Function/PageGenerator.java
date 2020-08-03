@@ -1,29 +1,29 @@
-package PageObject.newsfeed.Common;
+package common.Function;
 
 import PageObject.Backend.BackendLoginPageObject;
 import PageObject.Backend.backendDashboardPageObject;
 import PageObject.business.Business.BusinessDashboardPageObject;
 import PageObject.newsfeed.AccountSetting.GeneralAccountPageObject;
-import PageObject.newsfeed.PageFeed.PostFunction.PostModelObject;
+import PageObject.newsfeed.PageFeed.PostFunction.EditorFunction;
 import PageObject.newsfeed.PersonalWall.PersonalTimelinePageObject;
-import PageObject.newsfeed.StartingProject.LoginPageObject;
+import PageObject.newsfeed.Starting.NewsFeed_Login;
 import PageObject.newsfeed.PageFeed.*;
 import PageObject.newsfeed.PersonalWall.Handnote.TourHandnotePageObject;
-import PageObject.newsfeed.StartingProject.VerificationAccountPageObject;
+import PageObject.newsfeed.Starting.NewsFeed_VerifyAccount;
 import org.openqa.selenium.WebDriver;
 
 public class PageGenerator {
-    public static VerificationAccountPageObject getVerifyAccountPage (WebDriver driver){
-        return new VerificationAccountPageObject(driver);
+    public static NewsFeed_VerifyAccount getVerifyAccountPage (WebDriver driver){
+        return new NewsFeed_VerifyAccount(driver);
     }
-    public static ExperienceTabPageObject getExperienceFeed(WebDriver driver){
-        return new ExperienceTabPageObject(driver);
+    public static NF_ExperiencePage getExperienceFeed(WebDriver driver){
+        return new NF_ExperiencePage(driver);
     }
-    public static LoginPageObject getLoginPage(WebDriver driver){
-        return new LoginPageObject(driver);
+    public static NewsFeed_Login getLoginPage(WebDriver driver){
+        return new NewsFeed_Login(driver);
     }
-    public static FlightTabPageObject getFlightFeed(WebDriver driver){
-        return new FlightTabPageObject(driver);
+    public static NF_FlighPage getFlightFeed(WebDriver driver){
+        return new NF_FlighPage(driver);
     }
     public static HotelTabPageObject getHotelFeed(WebDriver driver){
         return new HotelTabPageObject(driver);
@@ -49,8 +49,12 @@ public class PageGenerator {
     public static PersonalTimelinePageObject getPersonalTimeLinePage(WebDriver driver){
         return new PersonalTimelinePageObject(driver);
     }
-    public static PostModelObject openNormalPostEditor(WebDriver driver){
-        return new PostModelObject(driver);
+    // Khởi tạo model Editor
+    public static EditorFunction openNormalPostEditor(WebDriver driver){
+        return new EditorFunction(driver);
+    }
+    public static EditorFunction openExperiencePostEditor(WebDriver driver){
+        return new EditorFunction(driver);
     }
 
     public static BackendLoginPageObject getLoginBackendPage(WebDriver driver){
