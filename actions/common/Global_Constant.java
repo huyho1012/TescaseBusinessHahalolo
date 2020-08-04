@@ -11,6 +11,7 @@ public class Global_Constant {
     public static final String URL_BUSINESS_PAGE = "https://test-business.hahalolo.com/";
     public static final String URL_MAILINATOR = "https://www.mailinator.com/";
     public static final String URL_BACKEND_LOGIN = "https://test-backend.hahalolo.com/auth/signin";
+    public static final String URL_CENSOR_LINK = "https://test-censor.hahalolo.com/auth/signin";
     // Constant
     public static final long LONG_TIME_OUT = 30;
     public static final long LESS_TIME_OUT = 5;

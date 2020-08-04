@@ -2,6 +2,8 @@ package hahalolo.newsfeed.StartIngApp;
 
 import PageObject.Backend.BackendLoginPageObject;
 import PageObject.Backend.backendDashboardPageObject;
+import PageObject.Censor.CensorHomePage;
+import PageObject.Censor.CensorLogin;
 import common.Function.PageGenerator;
 import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
 import PageObject.newsfeed.Starting.NewsFeed_Login;
@@ -20,7 +22,8 @@ public class LoginTestcase extends AbstractTest {
     NewsFeed_Login loginPage;
     DriverManager driverManager;
     NewsfeedTabPageObject newsFeedPage;
-    BackendLoginPageObject backendLoginPage;
+    CensorLogin censorLoginPage;
+    CensorHomePage censorHomePage;
     backendDashboardPageObject backendDashboardPage;
     NewsFeed_VerifyAccount verifyAccountPage;
     String passWord ="123456";
@@ -86,14 +89,14 @@ public class LoginTestcase extends AbstractTest {
         verifyTrue(loginPage.checkLogoutSuccess());
 
         log.info("Step2 - Login with Admin Hahalolo");
-        backendLoginPage = loginPage.goToBackendLoginPage();
-        backendLoginPage.enterDataToUsernameTextBox(Global_Constant.BACKEND_USER_NAME);
-        backendLoginPage.enterDataToPasswordTextBox(Global_Constant.BACKEND_PASSWORD);
-        backendLoginPage.setTimeDelay(10);
-        backendDashboardPage = backendLoginPage.clickLoginButton();
-        verifyTrue(backendDashboardPage.verifyLoginBackEndSuccess());
-        backendDashboardPage.clickToItemOnMenu(driver,"Người dùng");
-        backendDashboardPage.clickToItemOnMenu(driver,"Tất cả người dùng");
+        censorLoginPage = loginPage.gotoCensorLoginPage();
+        censorLoginPage.enterUsername(Global_Constant.BACKEND_USER_NAME);
+        censorLoginPage.enterPassword(Global_Constant.BACKEND_PASSWORD);
+        censorLoginPage.setTimeDelay(10);
+        censorHomePage = censorLoginPage.clickLoginButton();
+        verifyTrue(censorHomePage.checkLoginCensorSuccess());
+        censorHomePage.clickToItemOnMenu(driver,"Người dùng");
+        censorHomePage.clickToItemOnMenu(driver,"Tất cả người dùng");
 //        backendAccountManager = backenDashboard.clickAllAccountManagerTab();
 //        verifyTrue(backendAccountManager.checkAccountManagerPageIsDisplay());
 //

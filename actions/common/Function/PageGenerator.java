@@ -2,6 +2,8 @@ package common.Function;
 
 import PageObject.Backend.BackendLoginPageObject;
 import PageObject.Backend.backendDashboardPageObject;
+import PageObject.Censor.CensorHomePage;
+import PageObject.Censor.CensorLogin;
 import PageObject.business.Business.BusinessDashboardPageObject;
 import PageObject.newsfeed.AccountSetting.GeneralAccountPageObject;
 import PageObject.newsfeed.PageFeed.PostFunction.EditorFunction;
@@ -62,6 +64,13 @@ public class PageGenerator {
     }
     public static backendDashboardPageObject getBackendDashboardPage(WebDriver driver){
         return new backendDashboardPageObject(driver);
+    }
+
+    public static CensorLogin getCensorLoginPage(WebDriver driver){
+        return new CensorLogin(driver);
+    }
+    public static CensorHomePage getCensorHomePage(WebDriver driver){
+        return new CensorHomePage(driver);
     }
 }
 

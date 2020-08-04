@@ -1,6 +1,7 @@
 package PageObject.newsfeed.Starting;
 
 import PageObject.Backend.BackendLoginPageObject;
+import PageObject.Censor.CensorLogin;
 import PageObject.newsfeed.Common.HeaderMenu;
 import common.Function.PageGenerator;
 import PageObject.newsfeed.PageFeed.NewsfeedTabPageObject;
@@ -115,5 +116,11 @@ public class NewsFeed_Login extends HeaderMenu {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         openNewWindow(driver, Global_Constant.URL_BACKEND_LOGIN);
         return PageGenerator.getLoginBackendPage(driver);
+    }
+
+    public CensorLogin gotoCensorLoginPage(){
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        openNewWindow(driver,Global_Constant.URL_CENSOR_LINK);
+        return  PageGenerator.getCensorLoginPage(driver);
     }
 }
