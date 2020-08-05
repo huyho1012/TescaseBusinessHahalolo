@@ -23,9 +23,9 @@ public class CensorHomePage extends AbstractPage {
 
     public void checkAndChangeLanguageToVI(WebDriver driver){
         waitForPageLoading(driver);
-        if(getTextOfElement(driver,CensorHomeUI.VI_LANGUAGE_ICON)== )
-        waitElementToVisible(driver,);
-        clickToElement(driver,CensorHomeUI.LANGUAGE_ICON);
-
+        if(checkIsDisplayedElement(driver,CensorHomeUI.ENG_LANGUAGE_ICON)){
+            waitElementToVisible(driver,CensorHomeUI.ENG_LANGUAGE_ICON);
+            clickToElement(driver,CensorHomeUI.ENG_LANGUAGE_ICON);
+        }
     }
 }

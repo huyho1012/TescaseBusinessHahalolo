@@ -15,18 +15,14 @@ public class NewsFeed_VerifyAccount extends AbstractPage {
         driver = webDriver;
     }
 
-    public Boolean checkEmailDisplayOnRegisterPage(String email) {
-        waitElementToVisible(driver, VerificationAccountPageUI.contentVerify);
-        return getTextOfElement(driver, VerificationAccountPageUI.contentVerify).contains(email);
+    public Boolean checkAccountDisplayOnRegisterPage(String account) {
+        waitElementToVisible(driver, VerificationAccountPageUI.CONTENT_VERIFY);
+        return getTextOfElement(driver, VerificationAccountPageUI.CONTENT_VERIFY).contains(account);
     }
 
     public Boolean checkTitlePageVerifyEmail() {
         waitElementToVisible(driver, VerificationAccountPageUI.TITLE_VERIFY_ACCOUNT_PAGE_BY,"email");
         return getTextOfElement(driver, VerificationAccountPageUI.TITLE_VERIFY_ACCOUNT_PAGE_BY,"email").contains("Xác minh tài khoản bằng email");
-    }
-    public Boolean checkPhoneDisplayOnRegisterPage(String phoneNumber) {
-        waitElementToVisible(driver, VerificationAccountPageUI.contentVerify);
-        return getTextOfElement(driver, VerificationAccountPageUI.contentVerify).contains(phoneNumber);
     }
 
     public Boolean checkTitlePageVerifyPhone() {

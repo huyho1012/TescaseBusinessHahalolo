@@ -53,4 +53,5 @@ public class NewsfeedTabPageObject extends HeaderMenu {
         waitElementToClickAble(driver, NewsFeedPageIU.CANCEL_UPDATE_NEW_INFO_BUTTON);
         clickToElement(driver,NewsFeedPageIU.CANCEL_UPDATE_NEW_INFO_BUTTON);
     }
+
 }

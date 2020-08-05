@@ -29,4 +29,10 @@ public class CensorLogin extends AbstractPage {
         clickToElement(driver,CensorLoginUI.LOGIN_BUTTON);
         return PageGenerator.getCensorHomePage(driver);
     }
+
+    public boolean checkLogoutSuccess() {
+        waitForPageLoading(driver);
+        waitElementToVisible(driver,CensorLoginUI.LOGIN_BUTTON);
+        return checkAreElementsIsDisplay(driver,CensorLoginUI.LOGIN_BUTTON);
+    }
 }

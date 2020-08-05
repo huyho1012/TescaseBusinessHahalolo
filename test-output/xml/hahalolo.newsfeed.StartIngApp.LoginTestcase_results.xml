@@ -4,18 +4,18 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="69.087">
+           time="90.355">
   <properties />
-            <testcase name="Login_TC03_Login_With_Blocked_Account_Email" time="69.087" classname="hahalolo.newsfeed.StartIngApp.LoginTestcase">
+            <testcase name="Login_TC03_Login_With_Blocked_Account_Email" time="90.355" classname="hahalolo.newsfeed.StartIngApp.LoginTestCase.ITTestcase">
                 <failure type="org.openqa.selenium.TimeoutException"
-                  message="Expected condition failed: waiting for element to be clickable: By.xpath: //a[@title =&apos;Người dùng&apos;] (tried for 30 second(s) with 500 milliseconds interval)"
+                  message="Expected condition failed: waiting for visibility of element located by By.xpath: //input[@id =&apos;signin-identity&apos;]/following-sibling::div (tried for 30 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@title ='Người dùng'] (tried for 30 second(s) with 500 milliseconds interval)
+                    <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@id ='signin-identity']/following-sibling::div (tried for 30 second(s) with 500 milliseconds interval)
   org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-  common.Function.AbstractPage.waitElementToClickAble(AbstractPage.java:434)
-  PageObject.Censor.CensorHomePage.clickToItemOnMenu(CensorHomePage.java:20)
-  hahalolo.newsfeed.StartIngApp.LoginTestcase.Login_TC03_Login_With_Blocked_Account_Email(LoginTestcase.java:98)
+  common.Function.AbstractPage.waitElementToVisible(AbstractPage.java:380)
+  PageObject.newsfeed.Starting.NewsFeed_Login.getValidateErrUsernameLogin(NewsFeed_Login.java:34)
+  hahalolo.newsfeed.StartIngApp.LoginTestCase.ITTestcase.Login_TC03_Login_With_Blocked_Account_Email(LoginTestcase.java:173)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -40,14 +40,15 @@
   org.testng.TestNG.run(TestNG.java:1017)
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[@title ='Người dùng']
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id ='signin-identity']/following-sibling::div"}
+  (Session info: chrome=84.0.4147.105)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'DESKTOP-GSFBD5T', ip: '10.0.1.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 79.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200720193547, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 1336, moz:profile: C:\Users\HUY HO\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b607829a-746e-4961-9d5f-2769d6d10575
-*** Element info: {Using=xpath, value=//a[@title ='Người dùng']}
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\HUYHO~1\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52251}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c667ec17e25b47ec35a823899212bb7a
+*** Element info: {Using=xpath, value=//input[@id ='signin-identity']/following-sibling::div}
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
   java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -65,12 +66,10 @@ Session ID: b607829a-746e-4961-9d5f-2769d6d10575
   org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
   org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
   org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-  org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-  org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
   org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-  common.Function.AbstractPage.waitElementToClickAble(AbstractPage.java:434)
-  PageObject.Censor.CensorHomePage.clickToItemOnMenu(CensorHomePage.java:20)
-  hahalolo.newsfeed.StartIngApp.LoginTestcase.Login_TC03_Login_With_Blocked_Account_Email(LoginTestcase.java:98)
+  common.Function.AbstractPage.waitElementToVisible(AbstractPage.java:380)
+  PageObject.newsfeed.Starting.NewsFeed_Login.getValidateErrUsernameLogin(NewsFeed_Login.java:34)
+  hahalolo.newsfeed.StartIngApp.LoginTestCase.ITTestcase.Login_TC03_Login_With_Blocked_Account_Email(LoginTestcase.java:173)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -96,7 +95,7 @@ Session ID: b607829a-746e-4961-9d5f-2769d6d10575
   com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
   com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
 ]]>
-      </failure>
+                </failure>
 
           </testcase>
   

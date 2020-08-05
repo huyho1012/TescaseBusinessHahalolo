@@ -6,16 +6,18 @@
         <listener class-name="common.LogAndReport.ExtentReportListener"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
-<!--    <test name="Test with chrome">-->
-<!--        <parameter name="browser" value="chrome"></parameter>-->
+<!--    <test name="Test with firefox">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
 <!--        <classes>-->
-<!--            <class name="hahalolo.newsfeed.TestCaseNewsfeedPage"></class>-->
+<!--            <class name="hahalolo.newsfeed.StartIngApp.LoginTestCase.ITTestcase"></class>-->
 <!--        </classes>-->
 <!--    </test>-->
     <test name="Test with firefox">
-        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="hahalolo.newsfeed.StartIngApp.LoginTestcase"></class>
+<!--            <class name="hahalolo.newsfeed.StartIngApp.LoginTestCase.ITTestcase"></class>-->
+            <class name="hahalolo.newsfeed.StartIngApp.LoginTestCase.ValidationTestcase"></class>
         </classes>
     </test>
+
 </suite>

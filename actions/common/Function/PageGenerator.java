@@ -2,6 +2,7 @@ package common.Function;
 
 import PageObject.Backend.BackendLoginPageObject;
 import PageObject.Backend.backendDashboardPageObject;
+import PageObject.Censor.AccountManager.CensorAccountList;
 import PageObject.Censor.CensorHomePage;
 import PageObject.Censor.CensorLogin;
 import PageObject.business.Business.BusinessDashboardPageObject;
@@ -71,6 +72,10 @@ public class PageGenerator {
     }
     public static CensorHomePage getCensorHomePage(WebDriver driver){
         return new CensorHomePage(driver);
+    }
+
+    public static CensorAccountList getAccountManagerList(WebDriver driver){
+        return new CensorAccountList(driver);
     }
 }
 

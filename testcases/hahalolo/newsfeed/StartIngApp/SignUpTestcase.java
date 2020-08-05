@@ -293,23 +293,8 @@ public class SignUpTestcase extends AbstractTest {
         loginPage.clickSignUpButton();
         Assert.assertEquals(loginPage.getValidateConfirmPassSignUp(),"Mật khẩu xác nhận là bắt buộc.");
     }
-    @Test
-    public void TC_01_SingUp_With_Valid_Email(){
-        loginPage.inputDataOnFirstNameSignUp("Huy");
-        loginPage.inputDataOnLastNameSignUp("Hồ");
-        loginPage.inputDataOnPhoneEmailSignUp(email);
-        loginPage.inputDataOnPasswordSignUp("123456");
-        loginPage.inputDataOnConfirmPasswordSignUp("123456");
-        loginPage.clickSignUpButton();
-        verifyPage = new NewsFeed_VerifyAccount(driver);
-        Assert.assertTrue(verifyPage.checkTitlePageVerifyEmail());
-        verifyPage.inputVerifyDataOnField("");
-        verifyPage.clickVerifyButton();
-        Assert.assertEquals(verifyPage.getVerifyCode(), "");
-
+    @AfterTest
+    public void closeBrowserAndDriver(){
+        closeBrowserAndDriver(driver);
     }
-    //    @AfterTest
-//    public void closePage(){
-//        driver.close();
-//    }
 }

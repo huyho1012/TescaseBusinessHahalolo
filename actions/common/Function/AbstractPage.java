@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageUI.Newsfeed.Common.HeaderPageUI;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -468,4 +469,10 @@ public abstract class AbstractPage {
         return select.isMultiple();
     }
 
+    public void clickToSettingItem(WebDriver driver, String itemMenu) {
+        setTimeDelay(2);
+        waitElementToClickAble(driver, HeaderPageUI.SETTING_FUNCTION);
+        clickToElement(driver, HeaderPageUI.SETTING_FUNCTION);
+        clickToElement(driver, HeaderPageUI.SETTING_ITEM_FUNCTION,itemMenu);
+    }
 }

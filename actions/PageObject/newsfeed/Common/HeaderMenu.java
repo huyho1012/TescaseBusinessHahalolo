@@ -10,12 +10,6 @@ public class HeaderMenu extends AbstractPage {
         clickToElement(driver, HeaderPageUI.NEWS_FEED_MENU, menuItem);
         setTimeDelay(1);
     }
-    public void clickToSettingItem(WebDriver driver, String itemMenu) {
-        setTimeDelay(2);
-        waitElementToClickAble(driver, HeaderPageUI.SETTING_FUNCTION);
-        clickToElement(driver, HeaderPageUI.SETTING_FUNCTION);
-        clickToElement(driver, HeaderPageUI.SETTING_ITEM_FUNCTION,itemMenu);
-    }
     public void clickFunctionOnHelping(WebDriver driver, String itemFunction){
         setTimeDelay(1);
         waitElementToClickAble(driver,HeaderPageUI.HELPER_FUNCTION);
