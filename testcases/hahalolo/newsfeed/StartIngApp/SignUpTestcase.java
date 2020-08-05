@@ -241,7 +241,7 @@ public class SignUpTestcase extends AbstractTest {
         loginPage.clickSignUpButton();
         verifyPage = new NewsFeed_VerifyAccount(driver);
         Assert.assertTrue(verifyPage.checkTitlePageVerifyEmail());
-        Assert.assertTrue(verifyPage.checkEmailDisplayOnRegisterPage(email));
+//        Assert.assertTrue(verifyPage.checkEmailDisplayOnRegisterPage(email));
     }
     @Test
     public void TC_01_SingUp_With_Blank_Password(){

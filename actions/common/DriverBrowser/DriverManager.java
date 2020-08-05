@@ -8,13 +8,13 @@ public abstract class DriverManager extends AbstractPage {
     AbstractTest test;
     protected abstract void createDriver();
     public void quitDriver(){
-        if(driver!=null){
+        if(driver!= null){
             driver.close();
-            driver=null;
+            driver = null;
         }
     }
     public WebDriver getDriver(String urlPage){
-        if(driver==null){
+        if(driver == null){
             createDriver();
         }
         driver.get(urlPage);

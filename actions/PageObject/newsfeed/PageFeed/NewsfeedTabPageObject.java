@@ -54,4 +54,22 @@ public class NewsfeedTabPageObject extends HeaderMenu {
         clickToElement(driver,NewsFeedPageIU.CANCEL_UPDATE_NEW_INFO_BUTTON);
     }
 
+    public void updateBirthday(WebDriver driver, String day, String dayItem, String month, String monthItem, String year, String yearItem) {
+        waitElementToClickAble(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,day);
+        selectItemInCustomDropdown(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,day,dayItem);
+        waitElementToClickAble(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,month);
+        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,month);
+        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_ITEM,month,monthItem);
+        waitElementToClickAble(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,year);
+        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,year);
+        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_ITEM,year,yearItem);
+    }
+
+    public void updateGender() {
+    }
+    public void updateCountry() {
+    }
+
+    public void clickUpdateButton() {
+    }
 }

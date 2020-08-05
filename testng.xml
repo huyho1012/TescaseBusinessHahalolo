@@ -16,7 +16,7 @@
         <parameter name="browser" value="chrome"></parameter>
         <classes>
 <!--            <class name="hahalolo.newsfeed.StartIngApp.LoginTestCase.ITTestcase"></class>-->
-            <class name="hahalolo.newsfeed.StartIngApp.LoginTestCase.ValidationTestcase"></class>
+            <class name="hahalolo.newsfeed.StartIngApp.SignUpTestCase.SignUpITTestcase"></class>
         </classes>
     </test>
 
