@@ -77,7 +77,7 @@ public class SignUpITTestcase extends AbstractTest {
         log.info("Register Account - Step 2.5 - Check verify account successfully");
         newsFeedPage = PageGenerator.getNewsFeedPage(driver);
 
-        newsFeedPage.updateBirthday(driver,"day","12","month","10","year","1992");
+        newsFeedPage.updateBirthday(driver,"day","12","month","10","year","2002");
         newsFeedPage.setTimeDelay(10);
         newsFeedPage.updateGender();
         newsFeedPage.updateCountry();

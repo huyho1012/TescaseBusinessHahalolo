@@ -26,10 +26,7 @@ public class EditorFunction extends AbstractPage {
 
     public boolean checkButtonSharePostIsEnable() {
         waitElementToVisible(driver,PostModelUI.CREATE_POST_BUTTON);
-        if(checkIsEnableElement(driver,PostModelUI.CREATE_POST_BUTTON)) {
-            return true;
-        }
-        return false;
+        return checkIsEnableElement(driver, PostModelUI.CREATE_POST_BUTTON);
     }
 
     public void inputPostNormalContent(String contentPost) {

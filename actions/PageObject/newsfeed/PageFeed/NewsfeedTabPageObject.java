@@ -55,14 +55,10 @@ public class NewsfeedTabPageObject extends HeaderMenu {
     }
 
     public void updateBirthday(WebDriver driver, String day, String dayItem, String month, String monthItem, String year, String yearItem) {
-        waitElementToClickAble(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,day);
-        selectItemInCustomDropdown(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,day,dayItem);
-        waitElementToClickAble(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,month);
-        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,month);
-        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_ITEM,month,monthItem);
-        waitElementToClickAble(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,year);
-        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,year);
-        clickToElement(driver,NewsFeedPageIU.SELECTED_DATE_ITEM,year,yearItem);
+        setTimeDelay(2);
+        selectItemInCustomDropdown(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,NewsFeedPageIU.SELECTED_DATE_ITEM,day,dayItem);
+        selectItemInCustomDropdown(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,NewsFeedPageIU.SELECTED_DATE_ITEM,month,monthItem);
+        selectItemInCustomDropdown(driver,NewsFeedPageIU.SELECTED_DATE_DROP_DOWN,NewsFeedPageIU.SELECTED_DATE_ITEM,year,yearItem);
     }
 
     public void updateGender() {

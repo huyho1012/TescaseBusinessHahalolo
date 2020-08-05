@@ -398,9 +398,7 @@ public abstract class AbstractPage {
     }
     public boolean checkAreElementsIsDisplay(WebDriver driver, String locator){
         elements = findElements(driver,locator);
-        if(!elements.isEmpty()){
-            return true;
-        } else return false;
+        return !elements.isEmpty();
     }
 
     // Dynamic Locator
@@ -449,9 +447,7 @@ public abstract class AbstractPage {
     }
     public boolean checkAreElementsIsDisplay(WebDriver driver, String locator,String...values){
         elements = findElements(driver,castToObject(locator, values));
-        if(!elements.isEmpty()){
-            return true;
-        } else return false;
+        return !elements.isEmpty();
     }
 
     public void selectItemInDefaultDropdown(WebDriver driver , String locator,String itemValue, String...values){
@@ -475,4 +471,22 @@ public abstract class AbstractPage {
         clickToElement(driver, HeaderPageUI.SETTING_FUNCTION);
         clickToElement(driver, HeaderPageUI.SETTING_ITEM_FUNCTION,itemMenu);
     }
+    public void selectItemInCustomDropdown(WebDriver driver , String dropdownMenu, String dropdownItem, String expectedItem, String...values){
+        clickToElement(driver,castToObject(dropdownMenu,values));
+        setTimeDelay(1);
+        explicitWait = new WebDriverWait(driver,Global_Constant.LONG_TIME_OUT);
+        explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byXpath(dropdownItem)));
+        elements = findElements(driver,castToObject(dropdownItem,values));
+        for(WebElement item: elements){
+            if(item.getText().contains(expectedItem)){
+                jsExecutor = (JavascriptExecutor) driver;
+
+                jsExecutor.executeScript("arguments[0].scrollIntoView(true);",item);
+                setTimeDelay(1);
+                item.click();
+                break;
+            }
+        }
+    }
+
 }
